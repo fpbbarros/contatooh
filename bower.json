@@ -1,0 +1,17 @@
+{
+  "name": "contatooh",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Fábio Pereira Barros <44626039+fpbbarros@users.noreply.github.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fpbbarros/contatooh",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
