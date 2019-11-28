@@ -1,6 +1,8 @@
 const express = require('express');
 const expressLoad = require('express-load');
-const homeRoutes = require('../app/routes/home');
+const bodyParser = require('body-parser');
+
+
 
 module.exports = function () {
 
@@ -12,6 +14,9 @@ module.exports = function () {
 
   //middleware
   app.use(express.static('../public'));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  app.use(require('method-override')());
 
   app.set('view engine', 'ejs');
   app.set('views', './app/views');
@@ -20,9 +25,6 @@ module.exports = function () {
     .then('controllers')
     .then('routes')
     .into(app);
-
-
-  //rotas
 
   return app;
 

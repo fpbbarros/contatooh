@@ -11,11 +11,17 @@ let contatos = [
 module.exports = function () {
   var controller = {};
   controller.listaContatos = function (req, res) {
-    console.log("aui");
-    res.json(contatos);
-    
+
+    res.status(200).json(contatos);
+
   };
-  
-  console.log(controller);
+
+  controller.obtemContato = function (req, res) {
+    let contato = contatos.filter(function(contato) {
+      return contato._id == req.params.id;
+    })[0]; contato ? res.status(200).json(contato) : res.status(404).json({mensagem: "Contato não encontrado"});
+  }
+
+
   return controller;
 }
