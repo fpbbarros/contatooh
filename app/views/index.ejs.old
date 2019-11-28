@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%=title %></title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+</head>
+
+<body>
+  <h1>Olá mundo <%=nome %></h1>
+
+  <button class="botao-grava">Novo</button>
+  <p class="contatos">Contatos Cadastrados: 0</p>
+
+
+  <p>Quanto é <input class="numero" type="text"> vezes <input class="numero" type="text"> </p>
+  <p>Resultado: <span class="resultado"></span></p>
+
+
+
+
+
+  <script>
+
+    // let numerosEl = $('.numero');
+
+    // $(numerosEl).on('keyup', function () {
+    //   let resultado = 1;
+    //   $.each(numerosEl, function () {
+    //     resultado *= $(this).val();
+    //   });
+    //   $('.resultado').text(resultado);
+    // });
+
+
+
+
+    var numEl = $('input[type=text]');
+    
+    $(numEl).keyup(function () {
+      console.log("aqui");
+      var resultado = 1;
+      $.each(numEl, function () {
+        resultado *= $(this).val();
+      });
+      $('.resultado').text(resultado);
+    });
+
+  </script>
+
+
+  <script>
+
+    let contatos = document.querySelector('.contatos');
+    let total = 0;
+    var boatao = document.querySelector('.botao-grava');
+
+    boatao.addEventListener('click', function (event) {
+      total++;
+      contatos.textContent = 'Contatos Cadastrados: ' + total;
+    });
+
+  </script>
+</body>
+
+</html>
