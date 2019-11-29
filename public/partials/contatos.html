@@ -1,10 +1,19 @@
 <div class="jumbotron">
-  <h1>Bem-vindo {{obj.nome}} </h1>
+  <h1 class="text-center">Bem-vindo {{obj.nome}} </h1>
 </div>
-<button ng-click="decrementa()" class="btn-danger">Menos</button>
-<button ng-click="incrementa()" class="btn-primary">Mais</button>
-<p>Contatos cadastrados: <strong>{{total}}</strong></p>
 
+
+
+
+<div class="row">
+  <div class="col-md-1">
+    <button ng-click="incrementa()" class="btn btn-primary">Mais</button>
+  </div>
+  <div class="col-md-6">
+    <input ng-model="filtro" type="search" placeholder="parte do nome" class="form-control">
+  </div>
+</div>
+<p class="my-3">Contatos cadastrados: <strong>{{total}}</strong></p>
 
 <div class="table-responsive">
   <table class="table table-hover">
@@ -13,14 +22,13 @@
       <th>E-MAIL</th>
       <th class="text-center">AÇÃO</th>
     </tr>
-    <tr>
+    <tr ng-repeat="contato in contatos | filter : filtro">
+
       <td>
-        <a>Contato</a>
+        <a>{{contato.nome}}</a>
       </td>
-      <td>
-        <a>empresa</a>
-      </td>
-      <td>cont@empresa.com.br</td>
+
+      <td>{{contato.email}}</td>
       <td class="text-center">
         <button class="btn btn-warning">
           Remover
