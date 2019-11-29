@@ -1,10 +1,31 @@
-<h1>Bem vindo ao contatooh</h1>
+<div class="jumbotron">
+  <h1>Bem-vindo {{obj.nome}} </h1>
+</div>
 <button ng-click="decrementa()" class="btn-danger">Menos</button>
 <button ng-click="incrementa()" class="btn-primary">Mais</button>
-<h5>contatos cadastrados: <b> {{total}} </b> </p>
-</h5>
-<h1>{{obj.nome}}</h1>
-<h2>{{obj.idade}}</h2>
-<h3>{{obj.endereco}}</h3>
-<h4>{{obj.profissao}}</h4>
-<h4>{{obj.title}}</h4>
+<p>Contatos cadastrados: <strong>{{total}}</strong></p>
+
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+      <th>NOME:</th>
+      <th>E-MAIL</th>
+      <th class="text-center">AÇÃO</th>
+    </tr>
+    <tr>
+      <td>
+        <a>Contato</a>
+      </td>
+      <td>
+        <a>empresa</a>
+      </td>
+      <td>cont@empresa.com.br</td>
+      <td class="text-center">
+        <button class="btn btn-warning">
+          Remover
+          </buttom>
+      </td>
+    </tr>
+  </table>
+</div>
