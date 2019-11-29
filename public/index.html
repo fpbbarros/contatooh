@@ -5,25 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Title</title>
+  <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body ng-controller="ContatosController">
-  <h1>Bem vindo ao contatooh</h1>
-  <button ng-click="incrementa()">Novo</button>
-  <h5>contatos cadastrados: <b> {{total}} </b> </p>
-    <h1>{{meuNome}}</h1>
+  <div class="container my-5">
+    <h1>Bem vindo ao contatooh</h1>
+    <button ng-click="incrementa()" class="btn-primary">Mais</button>
+    <button ng-click="decrementa()" class="btn-danger">Menos</button>
+    <h5>contatos cadastrados: <b> {{total}} </b> </p>
+      <h1>{{obj.nome}}</h1>
+      <h2>{{obj.idade}}</h2>
+      <h3>{{obj.endereco}}</h3>
+      <h4>{{obj.profissao}}</h4>
+      <h4>{{obj.title}}</h4>
+  </div>
 
-
-
-    <h2>{{obj.nome}}</h2>
-    <h3>{{obj.idade}}</h3>
-    <h4>{{obj.profissao}}</h4>
-    <h5>{{Obj.endereco}}</h5>
-
-    <script src="./vendor/angular/angular.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/controllers/ContatosController.js"></script>
+  <script src="./vendor/angular/angular.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/controllers/ContatosController.js"></script>
 
 </body>
 

@@ -4,21 +4,26 @@ angular.module('contatooh').controller('ContatosController',
     $scope.total = 0;
     $scope.meuNome = "Fábio Pereira Barros";
 
-    $scope.incrementa = function () {
+    $scope.decrementa = () => {
+
+      $scope.total--;
+      if ($scope.total < 0) {
+        $scope.total = 0;
+      }
+    }
+    $scope.incrementa = () => {
       $scope.total++;
     };
 
 
-    
-
     $scope.obj = {
-      nome: "fábio Barros",
+
+      nome: "Fábio Barros",
       idade: 31,
       profissao: "programador",
-      endereco: "Av Rangel Pestana"
+      endereco: "Av Rangel Pestana",
+      title: "Título do SITE"
+
     }
 
-
-
-    
   });
