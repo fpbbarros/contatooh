@@ -1,6 +1,5 @@
 angular.module('contatooh').controller('ContatoController',
 
-function ($scope, $routeParams) {
-console.log($routeParams);
-
-});
+  function ($scope, $routeParams) {
+    console.log($routeParams);
+  });
