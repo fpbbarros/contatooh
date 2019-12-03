@@ -11,16 +11,29 @@ let contatos = [
 module.exports = function () {
   var controller = {};
   controller.listaContatos = function (req, res) {
-
     res.status(200).json(contatos);
-
   };
+
+  controller.salvaContato = function(req, res) {
+    console.log("salva contato");
+  }
 
   controller.obtemContato = function (req, res) {
     let contato = contatos.filter(function(contato) {
       return contato._id == req.params.id;
     })[0]; contato ? res.status(200).json(contato) : res.status(404).json({mensagem: "Contato não encontrado"});
+  };
+
+
+  controller.removeContato = function(req, res) {
+    let idContato = req.params.id;
+    contatos = contatos.filter(function(contato) {
+      return contato._id != idContato;
+    });
+    res.send(204).end();
   }
+
+
 
 
   return controller;
