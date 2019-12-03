@@ -1,5 +1,7 @@
 angular.module('contatooh').controller('ContatoController',
 
   function ($scope, $routeParams) {
-    console.log($routeParams);
+    $scope.remove = function (contato) {
+      console.log(contato);
+    }
   });
